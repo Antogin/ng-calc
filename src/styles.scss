@@ -1,1 +1,21 @@
-/* You can add global styles to this file, and also import other style files */
+.app{
+ display: flex;
+  justify-content: center;
+}
+
+.calc{
+  display: block;
+}
+.btn{
+  background-color: white;
+  color: black;
+  padding: 2% 3%;
+  display: inline-block;
+  border: none;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  width: 20%;  margin: 20px 10px;
+}
+
+.viewer{
+  min-height: 50px;
+}

@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-numerical-password-input',
@@ -7,7 +7,7 @@ import {Component, EventEmitter, Input, OnInit} from '@angular/core';
 })
 export class NumericalPasswordInputComponent implements OnInit {
   @Input() userPassword: string;
-  passwordMatch: EventEmitter<void>;
+  @Output() passwordMatch: EventEmitter<void> = new EventEmitter();
 
   private currentPassword = '';
 
@@ -18,11 +18,9 @@ export class NumericalPasswordInputComponent implements OnInit {
   }
 
   private handleCurrentPasswordChange(val) {
-    console.log(val);
-
     this.currentPassword = this.currentPassword + val;
 
-    if (this.currentPassword.length === 3) {
+    if (this.currentPassword.length === 9) {
       if (this.currentPassword === this.userPassword) {
         console.log('MATCH');
         this.passwordMatch.emit();
