@@ -22,11 +22,9 @@ export class NumericalPasswordInputComponent implements OnInit {
 
     if (this.currentPassword.length === 9) {
       if (this.currentPassword === this.userPassword) {
-        console.log('MATCH');
         this.passwordMatch.emit();
       }
       this.currentPassword = '';
-
     }
   }
 
