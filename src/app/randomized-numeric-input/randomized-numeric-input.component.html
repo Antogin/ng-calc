@@ -1,3 +1,6 @@
-<p>
-  randomized-numeric-input works!
-</p>
+<div>
+  <button *ngFor="let item of values" (click)="clicked(item)">
+     {{item}}
+  </button>
+</div>
+
