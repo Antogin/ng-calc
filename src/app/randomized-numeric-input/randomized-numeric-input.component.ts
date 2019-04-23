@@ -7,19 +7,25 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 })
 export class RandomizedNumericInputComponent implements OnInit {
   @Input() currentPassword: string;
-  @Output() currentPasswordChange = new EventEmitter();
+  @Output() currentPasswordChange: EventEmitter<string> = new EventEmitter();
 
   private values = [
-    '1', '2', '3', '4', '5', '6', '7', '8', '9', ' ', ' '
+    '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ' ', ' '
   ];
+
 
   constructor() {
   }
 
   ngOnInit() {
+    this.shuffleValues();
   }
 
   private clicked(val) {
     this.currentPasswordChange.emit(val);
+  }
+
+  private shuffleValues() {
+    this.values = this.values.sort(() => Math.random() - 0.5);
   }
 }
