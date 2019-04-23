@@ -1,4 +1,9 @@
-
 <div class="app">
-  <app-numerical-password-input [userPassword]="'999999999'"></app-numerical-password-input>
+
+  <app-numerical-password-input (passwordMatch)="match()" [userPassword]="userPassword"></app-numerical-password-input>
+</div>
+
+<div class="meta">
+  <input [value]="userPassword" [(ngModel)]="userPassword">
+
 </div>

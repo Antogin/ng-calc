@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { NumericalPasswordInputComponent } from './numerical-password-input/numerical-password-input.component';
 import { PasswordViewerComponent } from './password-viewer/password-viewer.component';
 import { RandomizedNumericInputComponent } from './randomized-numeric-input/randomized-numeric-input.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { RandomizedNumericInputComponent } from './randomized-numeric-input/rand
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
